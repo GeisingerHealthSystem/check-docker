@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python36
 # logging.basicConfig(level=logging.DEBUG)
 import math
 from collections import deque, namedtuple, UserDict, defaultdict
@@ -404,22 +404,22 @@ def set_rc(new_rc):
 
 def ok(message):
     set_rc(OK_RC)
-    messages.append('OK: ' + message)
+    messages.append('[OK] ' + message)
 
 
 def warning(message):
     set_rc(WARNING_RC)
-    messages.append('WARNING: ' + message)
+    messages.append('[WARNING] ' + message)
 
 
 def critical(message):
     set_rc(CRITICAL_RC)
-    messages.append('CRITICAL: ' + message)
+    messages.append('[CRITICAL] ' + message)
 
 
 def unknown(message):
     set_rc(UNKNOWN_RC)
-    messages.append('UNKNOWN: ' + message)
+    messages.append('UNKNOWN ' + message)
 
 
 def require_running(name):
@@ -909,10 +909,10 @@ def print_results():
         if len(filtered_messages) == 0:
             messages_concat = 'OK'
         else:
-            messages_concat = '; '.join(filtered_messages)
+            messages_concat = '\n'.join(filtered_messages)
 
     else:
-        messages_concat = '; '.join(messages)
+        messages_concat = '\n'.join(messages)
 
     if no_performance or len(performance_data) == 0:
         print(messages_concat)
