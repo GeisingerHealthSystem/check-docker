@@ -1005,6 +1005,14 @@ def main():
     except Exception as e:
         traceback.print_exc()
         unknown("Exception raised during check': {}".format(repr(e)))
+    if rc == 0:
+      print("[OK] All systems running as expected")
+    elif rc == 1:
+      print("[WARNING] Some systems are not running as expected")
+    elif rc == 2:
+      print("[CRITICAL] Systems are critical!")
+    elif rc == 3:
+      print("[Unknown] Systems state unknown!")
     print_results()
     exit(rc)
 
