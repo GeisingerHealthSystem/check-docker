@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3
 # logging.basicConfig(level=logging.DEBUG)
 import math
 from collections import deque, namedtuple, UserDict, defaultdict
